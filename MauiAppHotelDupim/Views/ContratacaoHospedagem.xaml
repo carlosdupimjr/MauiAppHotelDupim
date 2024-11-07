@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotelDupim.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="SteelBlue">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+        <Label Text="Cálculo da Diária"
+               FontFamily="CharmBold"
+               FontSize="50"
+               TextColor="Silver"
+               HorizontalTextAlignment="Center"/>
+        <Frame Padding="10">
+            <VerticalStackLayout>
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*">
+
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="Adultos"/>
+                    <Label Grid.Row="0" Grid.Column="1"
+                           TextColor="DarkGray"
+                           FontAttributes="Bold"
+                           Text="{Binding Value}"
+                           BindingContext="{x:Reference stp_adultos}"/>
+
+                        <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="stp_adultos"
+                             Minimum="0"
+                             Maximum="10"
+                             Increment="1"
+                             BackgroundColor="LightSkyBlue"/>
+
+                    <Label Grid.Row="1" Grid.Column="0"
+                           Text="Crianças:"/>
+
+                    <Label Grid.Row="1" Grid.Column="1"
+                            TextColor="DarkGray"
+                            FontAttributes="Bold"
+                            Text="{Binding Value}"
+                            BindingContext="{x:Reference stp_criancas}"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                                 x:Name="stp_criancas"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"
+                                 BackgroundColor="LightSkyBlue"/>
+                           
+                </Grid>
+
+                <Label Text="Escolha sua Suíte"/>
+
+                <Picker x:Name="pck_quarto"
+                        Title="Selecione sua Acomodação">
+
+                </Picker>
+
+                <Frame Padding="10"
+                       Margin="10">
+
+                    <VerticalStackLayout>
+
+                        <Label Text="Período da Estadia"/>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+
+                            <Label Text="Check-in:"
+                                   Margin="0,10,39,10"/>
+                            <DatePicker x:Name="dtpck_checkin"
+                                        Format="dd/MM/yyyy"
+                                        Margin="0,0,0,10"/>
+
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+
+                            <Label Text="Check-out:"
+                                   Margin="0,10,30,10"/>
+                            <DatePicker x:Name="dtpck_checkout"
+                                        Format="dd/MM/yyyy"
+                                        Margin="0,0,0,10"/>
+
+                        </HorizontalStackLayout>
+
+                    </VerticalStackLayout>
+                    
+                </Frame>
+
+                <Button Text="Avançar"
+                        BackgroundColor="LightSkyBlue"
+                        Margin="0,10,0,0"
+                        Clicked="OnAvancarButtonClicked"/>
+
+                <Button Text="Sobre"
+                        BackgroundColor="Silver"
+                        WidthRequest="100"
+                        Margin="0,10,0,0"
+                        Clicked="OnSobreButtonClicked"/>
+
+            </VerticalStackLayout>                      
+        </Frame>
+        
+    </VerticalStackLayout>
+</ContentPage>
