@@ -7,8 +7,8 @@ public partial class SobrePage : ContentPage
 		InitializeComponent();
 	}
 
-    private async void OnSobreButtonClicked(object sender, EventArgs e)
+    private async void OnBackButtonClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new ContratacaoHospedagem());
+        Navigation.PopAsync();
     }
 }

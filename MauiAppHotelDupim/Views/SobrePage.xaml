@@ -68,6 +68,6 @@
                 WidthRequest="70"
                 HeightRequest="10"
                 Margin="0,10,0,0"
-                Clicked="OnSobreButtonClicked"/>
+                Clicked="OnBackButtonClicked"/>
     </VerticalStackLayout>
 </ContentPage>
